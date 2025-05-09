@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Memories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery-item {
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .download-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #ffffffcc;
+      padding: 5px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9em;
+      color: #333;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Family Memories</h1>
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="images/26CBB1C0-52F8-4066-A35D-3F67C7581E72.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/26CBB1C0-52F8-4066-A35D-3F67C7581E72.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/0C494D6D-890E-45D4-9538-DF82FDEB7792.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/0C494D6D-890E-45D4-9538-DF82FDEB7792.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/E44F97FB-FF63-4AB4-9289-8CF700AA4B5A.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/E44F97FB-FF63-4AB4-9289-8CF700AA4B5A.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/7B273F43-C2D6-47D0-ADD1-630E8C9B2A16.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/7B273F43-C2D6-47D0-ADD1-630E8C9B2A16.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/FCE6A534-EDF1-424A-943E-C19A629ECA75.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/FCE6A534-EDF1-424A-943E-C19A629ECA75.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/6E1FB403-EF46-4219-9798-5622733EF852.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/6E1FB403-EF46-4219-9798-5622733EF852.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/5D158ABC-01A7-4F35-A97B-B69C96E695E5.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/5D158ABC-01A7-4F35-A97B-B69C96E695E5.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/B7695316-4F2D-4583-A069-9926F2C6EFEA.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/B7695316-4F2D-4583-A069-9926F2C6EFEA.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/6B64155C-DA62-4CE3-B2EA-B7A0B358878C.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/6B64155C-DA62-4CE3-B2EA-B7A0B358878C.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/027D6C08-F3F6-4D01-9953-88918D1E9521.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/027D6C08-F3F6-4D01-9953-88918D1E9521.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/FCD7B979-3DF1-4841-B9EA-250451ADD8B5.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/FCD7B979-3DF1-4841-B9EA-250451ADD8B5.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/C75AD0F0-7A9D-4E3B-B5C6-EA77C6B15F46.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/C75AD0F0-7A9D-4E3B-B5C6-EA77C6B15F46.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/2263E63C-63DE-43E9-B48B-9238FC9DA3E1.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/2263E63C-63DE-43E9-B48B-9238FC9DA3E1.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/A32E8C71-A7B6-4586-81DF-EEFE7F7EC3BB.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/A32E8C71-A7B6-4586-81DF-EEFE7F7EC3BB.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/22FE2341-5219-40AE-9820-5398DC884D6B.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/22FE2341-5219-40AE-9820-5398DC884D6B.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/3605212B-DFD8-49AB-8472-86790FCC33FB.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/3605212B-DFD8-49AB-8472-86790FCC33FB.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/E1603ED5-5C16-44E7-A6E4-03FB7BF7FF61.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/E1603ED5-5C16-44E7-A6E4-03FB7BF7FF61.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/2AC70282-B606-4A59-9498-2C80A8B01A2F.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/2AC70282-B606-4A59-9498-2C80A8B01A2F.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/BC02E226-73D2-4802-8D9D-A8E323793EB5.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/BC02E226-73D2-4802-8D9D-A8E323793EB5.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/7817FAC5-2F1B-4B81-AFFA-A3C138A16915.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/7817FAC5-2F1B-4B81-AFFA-A3C138A16915.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/46DE7C3B-5989-4FA8-9D2A-3C5D5864361F.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/46DE7C3B-5989-4FA8-9D2A-3C5D5864361F.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/BE561A16-9031-4CBB-8FA1-E9BF2D6AC92F.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/BE561A16-9031-4CBB-8FA1-E9BF2D6AC92F.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/F7156865-810C-4EE3-B5E2-28215A8A2842.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/F7156865-810C-4EE3-B5E2-28215A8A2842.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/3A3E644F-F37F-47D6-9731-F464C5657729.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/3A3E644F-F37F-47D6-9731-F464C5657729.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/B8134388-A975-4255-82E6-AA31C188A915.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/B8134388-A975-4255-82E6-AA31C188A915.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/082BC41B-0116-4ADC-878F-0E4BA9B387ED.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/082BC41B-0116-4ADC-878F-0E4BA9B387ED.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/3693A34A-AE46-4594-8F07-9BA958FC2DD0.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/3693A34A-AE46-4594-8F07-9BA958FC2DD0.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/6CDA2DD1-39FC-4351-B810-561EF17A9F3C.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/6CDA2DD1-39FC-4351-B810-561EF17A9F3C.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/BA4A769D-EF62-49C5-8899-651F11597081.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/BA4A769D-EF62-49C5-8899-651F11597081.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/510F4B15-4160-4A7B-8A0A-B1682E4E2D69.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/510F4B15-4160-4A7B-8A0A-B1682E4E2D69.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/76206897-BB81-4306-96E2-D98EA1BF7CA5.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/76206897-BB81-4306-96E2-D98EA1BF7CA5.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/65C305D2-8851-4B9D-8854-37571EC09745.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/65C305D2-8851-4B9D-8854-37571EC09745.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/B5BA9FC2-9432-4031-B05E-4DAA356F7C45.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/B5BA9FC2-9432-4031-B05E-4DAA356F7C45.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/717D680D-82FF-40DB-8334-FE6300498D0C.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/717D680D-82FF-40DB-8334-FE6300498D0C.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3425.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3425.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2027.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2027.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3739.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3739.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2161.JPG.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2161.JPG.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1714.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1714.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3698.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3698.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2066.JPG_1.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2066.JPG_1.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2028.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2028.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3028.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3028.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3721.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3721.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3685.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3685.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2161.JPG_1.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2161.JPG_1.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3553.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3553.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_3676.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_3676.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2357.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2357.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2275.jpg.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2275.jpg.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2271.jpg.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2271.jpg.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2271.jpg_1.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2271.jpg_1.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1368.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1368.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2272.jpg.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2272.jpg.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1116.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1116.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1557.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1557.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1556.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1556.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1555.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1555.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1134.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1134.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1553.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1553.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1392.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1392.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1539.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1539.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/image000004.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/image000004.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/image000003.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/image000003.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_2273.jpg.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_2273.jpg.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_1686.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_1686.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0188.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0188.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0237.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0237.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0176.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0176.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0918.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0918.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0977.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0977.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/1061497668273477778.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/1061497668273477778.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/809419152485006121.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/809419152485006121.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0926.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0926.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/1878339799436814427.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/1878339799436814427.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/2921583022861579271.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/2921583022861579271.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/6663598882263380256.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/6663598882263380256.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/image000001.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/image000001.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/image000002.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/image000002.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/5021023829482864851.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/5021023829482864851.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/6722097423804624533.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/6722097423804624533.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/7543749550269146003.jpeg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/7543749550269146003.jpeg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0925_1.jpg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0925_1.jpg" download>Download</a>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/IMG_0923.jpg" alt="Family Photo" onclick="openLightbox(this.src)">
+      <a class="download-btn" href="images/IMG_0923.jpg" download>Download</a>
+    </div>
+    
+  </div>
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded View">
+  </div>
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+      img.src = src;
+      lightbox.style.display = "flex";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>

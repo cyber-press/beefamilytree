@@ -1,0 +1,126 @@
+/* 🌟 General Styling */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    background: #fff;
+}
+
+/* 🖼️ Gallery Grid */
+#gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 📌 Gallery Items */
+.gallery-item {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 🛠 Navigation */
+nav {
+    margin-top: 15px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.download-btn {
+    background: #28a745;
+    color: white;
+}
+
+.share-btn {
+    background: #007bff;
+    color: white;
+}
+
+/* 📌 Refined Navbar Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #222, #444); /* Soft gradient */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle depth */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+}
+
+/* 🖋️ Navigation Links */
+.navbar a {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+}
+
+/* 📌 Filter Section Styling */
+.filter-section {
+    margin-top: 80px; /* Push down to prevent overlap with navbar */
+    padding: 10px;
+    text-align: center;
+    background: #333;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.filter-section select {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1rem;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeFamTree Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Georgia', serif;
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .filter-section {
+      margin-bottom: 20px;
+    }
+
+    .filter-section label,
+    .filter-section select {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    #gallery-grid {
+      column-count: 1;
+      column-gap: 15px;
+      padding: 20px;
+    }
+
+    @media (min-width: 600px) {
+      #gallery-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 900px) {
+      #gallery-grid {
+        column-count: 3;
+      }
+    }
+
+    .gallery-item {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+      background: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* 🔍 Modal Styles */
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    #modal:target {
+      display: flex;
+    }
+
+    #modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #ffd700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🖼️ BeeFamTree Gallery</h1>
+
+    <nav class="navbar">
+    <a href="index.html">🏡 Home</a>
+    <a href="about.html">📝 Family History</a>
+    <a href="schedule.html">📅 Schedule</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+      </nav>
+
+  <div class="filter-section">
+    <label for="filter">Filter by Family Group:</label>
+    <select id="filter">
+      <option value="">All Groups</option>
+      <option value="Emmett Family">Emmett Family</option>
+      <option value="Francis Lineage">Francis Lineage</option>
+      <option value="Bee Descendants">Bee Descendants</option>
+    </select>
+  </div>
+</header>
+
+  <main id="gallery-grid">
+    <!-- Images will be dynamically loaded here -->
+  </main>
+
+  <!-- 🖼️ Modal Viewer -->
+  <div id="modal">
+    <span id="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="Full View" />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleryGrid = document.getElementById("gallery-grid");
+      const filterDropdown = document.getElementById("filter");
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modal-img");
+      const modalClose = document.getElementById("modal-close");
+
+      // 🖼️ Load and assign click-to-view logic
+      for (let i = 1; i <= 110; i++) {
+        const imgDiv = document.createElement("div");
+        imgDiv.className = "gallery-item";
+        imgDiv.setAttribute("data-group", i % 3 === 0 ? "Emmett Family" : i % 2 === 0 ? "Francis Lineage" : "Bee Descendants");
+
+        const image = document.createElement("img");
+        image.src = `/images/image${i}.jpg`;
+        image.alt = `Image ${i}`;
+        image.onerror = () => { image.src = "/images/fallback.jpg"; };
+
+        image.addEventListener("click", () => {
+          modal.style.display = "flex";
+          modalImg.src = image.src;
+        });
+
+        imgDiv.appendChild(image);
+        galleryGrid.appendChild(imgDiv);
+      }
+
+      // 🔍 Close modal
+      modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // 🧹 Filter logic
+      filterDropdown.addEventListener("change", (event) => {
+        const selectedGroup = event.target.value;
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          item.style.display = selectedGroup === "" || item.getAttribute("data-group") === selectedGroup ? "inline-block" : "none";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

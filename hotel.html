@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeFamTree - Hotel Info</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fdfcf8;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    p.description {
+      margin-bottom: 30px;
+      color: #555;
+    }
+    a.menu-link {
+      display: block;
+      margin-bottom: 20px;
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      margin-bottom: 30px;
+      text-align: left;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .section h2 {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 4px solid #007BFF;
+      margin-top: 0;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "\2713";
+      color: green;
+      padding-right: 10px;
+    }
+    .dropdown-button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Beaufort SC - LongHorn Steakhouse</h1>
+  <p class="description">
+    Casual steakhouse chain known for grilled beef & other American dishes in a ranch-style space.
+  </p>
+  <a class="menu-link" href="https://www.longhornsteakhouse.com/menu/legendary-steaks-combos" target="_blank">
+    View Menu
+  </a>
+  <button class="dropdown-button" onclick="document.getElementById('details').scrollIntoView({behavior: 'smooth'});">
+    ABOUT &#9662;
+  </button>
+  <div id="details">
+    <div class="section"><h2>Accessibility</h2><ul><li>Wheelchair accessible entrance</li><li>Wheelchair accessible parking lot</li><li>Wheelchair accessible restroom</li><li>Wheelchair accessible seating</li></ul></div>
+    <div class="section"><h2>Service options</h2><ul><li>Curbside pickup</li><li>Takeout</li><li>Dine-in</li><li>Delivery</li></ul></div>
+    <div class="section"><h2>Highlights</h2><ul><li>Fast service</li><li>Great beer selection</li><li>Great cocktails</li><li>Great dessert</li><li>Great tea selection</li><li>Sports</li></ul></div>
+    <div class="section"><h2>Popular for</h2><ul><li>Lunch</li><li>Dinner</li><li>Solo dining</li></ul></div>
+    <div class="section"><h2>Offerings</h2><ul><li>Alcohol</li><li>Beer</li><li>Cocktails</li><li>Coffee</li><li>Comfort food</li><li>Hard liquor</li><li>Healthy options</li><li>Small plates</li><li>Vegetarian options</li><li>Wine</li></ul></div>
+    <div class="section"><h2>Dining options</h2><ul><li>Lunch</li><li>Dinner</li><li>Dessert</li><li>Seating</li></ul></div>
+    <div class="section"><h2>Amenities</h2><ul><li>Bar onsite</li><li>Restroom</li><li>Wi-Fi</li><li>Free Wi-Fi</li></ul></div>
+    <div class="section"><h2>Atmosphere</h2><ul><li>Casual</li><li>Cozy</li><li>Trendy</li></ul></div>
+    <div class="section"><h2>Crowd</h2><ul><li>Family-friendly</li><li>Groups</li><li>LGBTQ+ friendly</li><li>Tourists</li><li>Transgender safespace</li></ul></div>
+    <div class="section"><h2>Planning</h2><ul><li>Accepts reservations</li></ul></div>
+    <div class="section"><h2>Payments</h2><ul><li>Credit cards</li><li>Debit cards</li><li>NFC mobile payments</li></ul></div>
+    <div class="section"><h2>Children</h2><ul><li>Good for kids</li><li>High chairs</li><li>Kids' menu</li></ul></div>
+    <div class="section"><h2>Parking</h2><ul><li>Free parking lot</li><li>Free street parking</li><li>Usually plenty of parking</li></ul></div>
+  </div>
+</body>
+</html>

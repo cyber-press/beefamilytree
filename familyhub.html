@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeeFamTree - Family Hub</title>
+  <style>
+    body {
+      background-color: #777;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #fff;
+      padding: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .button-container {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .button-container a {
+      margin: 10px 0;
+      text-decoration: none;
+    }
+    .nav-button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .nav-button:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="tree-icon.jpg" alt="Tree Icon" class="icon"> BeeFamTree
+  </header>
+  <div class="button-container">
+    <button class="nav-button" onclick="window.location.href='hotel.html'">📖 Hotel & Dining</button>
+    <a href="about.html"><button class="nav-button">📝 Family History</button></a>
+    <a href="schedule.html"><button class="nav-button">📅 View Schedule</button></a>
+    <a href="roots.html"><button class="nav-button">📜 Our Roots</button></a>
+    <a href="gallery.html"><button class="nav-button">🖼️ View Gallery</button></a>
+    
+  </div>
+</body>
+</html>
+
